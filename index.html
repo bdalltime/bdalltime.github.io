@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BD All Time Topup</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #ff6600;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, select, button {
+      margin: 10px;
+      padding: 10px;
+      width: 250px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #ff6600;
+      color: white;
+      border: none;
+    }
+    .section-title {
+      font-weight: bold;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      color: #444;
+    }
+    .highlight-box {
+      background-color: #fff3cd;
+      border: 1px solid #ffeeba;
+      color: #856404;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 10px 0;
+    }
+    .copy-btn {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      margin-top: 5px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .desc-box {
+      background-color: #fff8dc;
+      border: 1px solid #fdd835;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 20px;
+      text-align: left;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #333;
+      font-size: 15px;
+    }
+    footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>BD All Time Topup</h1>
+  <form>
+    <input type="text" name="uid" placeholder="আপনার ফ্রি ফায়ার UID" required><br>
+    <select name="package" required>
+      <option value="">প্যাকেজ নির্বাচন করুন</option>
+      <option value="weekly">Weekly Membership – ১২০ টাকা</option>
+      <option value="monthly">Monthly Membership – ৫৫০ টাকা</option>
+      <option value="level">Level Up Pass – ১২০ টাকা</option>
+      <option value="25">২৫ ডায়মন্ড – ২০ টাকা</option>
+      <option value="50">৫০ ডায়মন্ড – ৩০ টাকা</option>
+      <option value="115">১১৫ ডায়মন্ড – ৬৫ টাকা</option>
+      <option value="240">২৪০ ডায়মন্ড – ১৩০ টাকা</option>
+      <option value="610">৬১০ ডায়মন্ড – ৩০০ টাকা</option>
+      <option value="1240">১২৪০ ডায়মন্ড – ৫৫০ টাকা</option>
+    </select><br>
+
+    <div class="section-title">পেমেন্ট তথ্য:</div>
+    <div class="highlight-box">
+      বিকাশ (Send Money করুন): <span id="bkash">01822769871</span><br>
+      <button type="button" class="copy-btn" onclick="copyToClipboard('bkash')">কপি করুন</button>
+    </div>
+    <div class="highlight-box">
+      নগদ (Send Money করুন): <span id="nagad">01822769871</span><br>
+      <button type="button" class="copy-btn" onclick="copyToClipboard('nagad')">কপি করুন</button>
+    </div>
+
+    <input type="text" name="trxid" placeholder="পেমেন্ট ট্রানজাকশন ID" required><br>
+    <select name="payment_method" required>
+      <option value="">পেমেন্ট মাধ্যম নির্বাচন করুন</option>
+      <option value="bkash">বিকাশ</option>
+      <option value="nagad">নগদ</option>
+    </select><br>
+    <input type="text" name="contact" placeholder="মোবাইল নম্বর / হেল্প লাইন: 01822769871" required><br>
+    <button type="submit">অর্ডার করুন</button>
+  </form>
+
+  <div class="desc-box">
+    ⚠️ Player ID ভুল দিয়ে অর্ডার করে Diamond না পেলে BD All Time Topup কর্তৃপক্ষ দায়ি থাকবে না।<br><br>
+    🇧🇩 এই সেকশন থেকে শুধু বাংলাদেশ সার্ভারে টপ-আপ করতে পারবেন।<br><br>
+    🤖 যেই অর্ডার এর পাশে [ 🤖 👈 ] এইটা আছে সেই অর্ডার AI দ্বারা কমপ্লিট হয়।
+  </div>
+
+  <footer>
+    <p>বিশ্বস্ততা, দ্রুততা আর সেবা—BD All Time Topup, গেমারদের নির্ভরতার ঠিকানা!</p>
+  </footer>
+
+  <script>
+    function copyToClipboard(id) {
+      var copyText = document.getElementById(id).innerText;
+      navigator.clipboard.writeText(copyText).then(function() {
+        alert('নাম্বার কপি হয়েছে: ' + copyText);
+      });
+    }
+  </script>
+</body>
+</html>
