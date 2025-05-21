@@ -4,132 +4,105 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BD All Time Topup</title>
+  <title>BD TOPUP.COM</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
-      text-align: center;
-      padding: 20px;
-    }
-    h1 {
-      color: #ff6600;
-    }
-    form {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      display: inline-block;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    input, select, button {
-      margin: 10px;
-      padding: 10px;
-      width: 250px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    button {
-      background-color: #ff6600;
-      color: white;
-      border: none;
-    }
-    .section-title {
-      font-weight: bold;
-      margin-top: 15px;
-      margin-bottom: 5px;
-      color: #444;
-    }
-    .highlight-box {
-      background-color: #fff3cd;
-      border: 1px solid #ffeeba;
-      color: #856404;
-      padding: 10px;
-      border-radius: 5px;
-      margin: 10px 0;
-    }
-    .copy-btn {
-      background-color: #007bff;
-      color: white;
-      border: none;
-      padding: 5px 10px;
-      margin-top: 5px;
-      border-radius: 3px;
-      cursor: pointer;
-    }
-    .desc-box {
-      background-color: #fff8dc;
-      border: 1px solid #fdd835;
-      padding: 15px;
-      border-radius: 10px;
-      margin-top: 20px;
-      text-align: left;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
-      color: #333;
-      font-size: 15px;
-    }
-    footer {
-      margin-top: 30px;
-      font-size: 14px;
-      color: #555;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    body { font-family: 'Poppins', sans-serif; background: #f0f2f5; margin: 0; padding: 0; transition: background 0.3s; }
+    .container { max-width: 960px; margin: 40px auto; background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); padding: 30px; border-radius: 16px; box-shadow: 0 0 15px rgba(0,0,0,0.15); }
+    h1, h2, h3 { text-align: center; color: #d84315; }
+    label { font-weight: 600; display: block; margin-top: 15px; color: #333; }
+    select, input[type="text"] { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ccc; margin-top: 8px; margin-bottom: 20px; }
+    button { background: linear-gradient(to right, #ff9800, #ff5722); color: white; padding: 12px; border: none; border-radius: 12px; font-weight: bold; width: 100%; cursor: pointer; transition: 0.3s; }
+    button:hover { background: linear-gradient(to right, #f57c00, #e64a19); }
+    .copy-btn { background: #2196F3; color: white; border: none; padding: 6px 12px; margin-left: 10px; border-radius: 6px; cursor: pointer; font-size: 13px; }
+    footer { text-align: center; font-size: 14px; color: #999; margin-top: 40px; }
+    .highlight-box { background: #fff8e1; border-left: 5px solid #ffb300; padding: 15px; border-radius: 12px; font-size: 14px; margin-bottom: 25px; color: #555; }
+    .toggle { text-align: right; margin-bottom: 10px; }
+    .toggle button { width: auto; font-size: 14px; padding: 6px 12px; border-radius: 6px; margin-top: -10px; }
+    body.dark { background: #121212; color: #fff; }
+    body.dark .container { background: rgba(30,30,30,0.8); color: #fff; }
+    body.dark select, body.dark input { background: #2a2a2a; color: #fff; border: 1px solid #555; }
+    body.dark .highlight-box { background: #333; color: #ddd; border-left-color: #ffa000; }
   </style>
 </head>
 <body>
-  <h1>BD All Time Topup</h1>
-  <form>
-    <input type="text" name="uid" placeholder="আপনার ফ্রি ফায়ার UID" required><br>
-    <select name="package" required>
-      <option value="">প্যাকেজ নির্বাচন করুন</option>
-      <option value="weekly">Weekly Membership – ১২০ টাকা</option>
-      <option value="monthly">Monthly Membership – ৫৫০ টাকা</option>
-      <option value="level">Level Up Pass – ১২০ টাকা</option>
-      <option value="25">২৫ ডায়মন্ড – ২০ টাকা</option>
-      <option value="50">৫০ ডায়মন্ড – ৩০ টাকা</option>
-      <option value="115">১১৫ ডায়মন্ড – ৬৫ টাকা</option>
-      <option value="240">২৪০ ডায়মন্ড – ১৩০ টাকা</option>
-      <option value="610">৬১০ ডায়মন্ড – ৩০০ টাকা</option>
-      <option value="1240">১২৪০ ডায়মন্ড – ৫৫০ টাকা</option>
-    </select><br>
+  <div class="toggle">
+    <button onclick="toggleMode()">🌙 Toggle Dark/Light</button>
+  </div>
+  <div class="container">
+    <h1>BD TOPUP.COM</h1>
+    <p style="text-align:center;"><strong>টপআপ এর যেই কোন সমস্যার সমাধান নিন</strong><br>
+    <a href="https://t.me/BDTOPUPCOM24" target="_blank">টেলিগ্রামে চ্যাট করুন</a></p>
 
-    <div class="section-title">পেমেন্ট তথ্য:</div>
+    <label>আপনার UID</label>
+    <input type="text" placeholder="UID দিন">
+
     <div class="highlight-box">
-      বিকাশ (Send Money করুন): <span id="bkash">01822769871</span><br>
-      <button type="button" class="copy-btn" onclick="copyToClipboard('bkash')">কপি করুন</button>
-    </div>
-    <div class="highlight-box">
-      নগদ (Send Money করুন): <span id="nagad">01822769871</span><br>
-      <button type="button" class="copy-btn" onclick="copyToClipboard('nagad')">কপি করুন</button>
+      ⚠️ Player ID ভুল দিয়ে অর্ডার করে Diamond না পেলে BD TOPUP.COM কর্তৃপক্ষ দায়ি থাকবে না।<br><br>
+      🇧🇩 এই সেকশন থেকে শুধু বাংলাদেশ সার্ভার এ টপ-আপ করতে পারবেন।<br><br>
+      🤖 যেই অর্ডার এর পাশে [ 🤖 👈 ] এইটা আছে সেই অর্ডার Ai দ্বারা কমপ্লিট হয়।<br><br>
+      🎯 যাদের আইডিতে আগে থেকে Level up pass📗 নেওয়া আছে, তারা আবার নিলে সেটার পরিবর্তে [243💎] টপ-আপ হয়ে যাবে।
     </div>
 
-    <input type="text" name="trxid" placeholder="পেমেন্ট ট্রানজাকশন ID" required><br>
-    <select name="payment_method" required>
-      <option value="">পেমেন্ট মাধ্যম নির্বাচন করুন</option>
-      <option value="bkash">বিকাশ</option>
-      <option value="nagad">নগদ</option>
-    </select><br>
-    <input type="text" name="contact" placeholder="মোবাইল নম্বর / হেল্প লাইন: 01822769871" required><br>
-    <button type="submit">অর্ডার করুন</button>
-  </form>
+    <label>সব প্যাকেজ (বাংলাদেশ + ইন্দোনেশিয়া)</label>
+    <select>
+      <optgroup label="বাংলাদেশ সার্ভার">
+        <option>100 Diamond - ৳৫০</option>
+        <option>210 Diamond - ৳৯০</option>
+        <option>530 Diamond - ৳২০০</option>
+        <option>1080 Diamond - ৳৪২০</option>
+        <option>2200+850 Diamond - ৳১৩৫০</option>
+        <option>3600 Diamond - ৳১৩৫০</option>
+        <option>5600 Diamond - ৳১৭০০</option>
+        <option>Weekly Membership - ৳১২০</option>
+        <option>Monthly Membership - ৳৫৫০</option>
+        <option>EvoX Access - ৳৬০</option>
+        <option>Airdrop - ৳১৩০</option>
+        <option>Level Up Pass - ৳২০০</option>
+      </optgroup>
+      <optgroup label="ইন্দোনেশিয়া সার্ভার">
+        <option>5 Diamond (ID Server) - ৳১৫</option>
+        <option>50 Diamond (ID Server) - ৳৬৫</option>
+        <option>70 Diamond (ID Server) - ৳৮৫</option>
+        <option>140 Diamond (ID Server) - ৳১৭৯</option>
+        <option>355 Diamond (ID Server) - ৳৪৪৯</option>
+        <option>720 Diamond (ID Server) - ৳৮৩০</option>
+        <option>1440 Diamond (ID Server) - ৳১৮৯৯</option>
+        <option>Weekly (ID Server) - ৳২৫৯</option>
+        <option>Monthly (ID Server) - ৳৮৯৯</option>
+        <option>Level Up Pass (ID Server) - ৳১৫৯</option>
+        <option>BP-Card (ID Server) - ৳৩৯৯</option>
+      </optgroup>
+    </select>
 
-  <div class="desc-box">
-    ⚠️ Player ID ভুল দিয়ে অর্ডার করে Diamond না পেলে BD All Time Topup কর্তৃপক্ষ দায়ি থাকবে না।<br><br>
-    🇧🇩 এই সেকশন থেকে শুধু বাংলাদেশ সার্ভারে টপ-আপ করতে পারবেন।<br><br>
-    🤖 যেই অর্ডার এর পাশে [ 🤖 👈 ] এইটা আছে সেই অর্ডার AI দ্বারা কমপ্লিট হয়।
+    
+    <hr style="margin: 30px 0; border: none; border-top: 2px solid #ccc;" />
+    <h3>পেমেন্ট তথ্য</h3>
+    <p><em>নগদ বিকাশ নাম্বার এ সেন্ড মানি করুন</em></p>
+    
+    <p>নগদ বিকাশ নাম্বার এ সেন্ড মানি করুন</p>
+    <p>bKash: <span id="bkash">01822769871</span><button class="copy-btn" onclick="copyText('bkash')">Copy</button></p>
+    <p>Nagad: <span id="nagad">01822769871</span><button class="copy-btn" onclick="copyText('nagad')">Copy</button></p>
+
+    <label>ট্রানজেকশন ID</label>
+    <input type="text" placeholder="TrxID দিন">
+
+    
+    <button>অর্ডার করুন</button>
+    <hr style="margin: 30px 40px; border: none; border-top: 2px solid #ccc;" />
+    
+    <footer>&copy; 2025 BD TOPUP.COM | All rights reserved</footer>
   </div>
 
-  <footer>
-    <p>বিশ্বস্ততা, দ্রুততা আর সেবা—BD All Time Topup, গেমারদের নির্ভরতার ঠিকানা!</p>
-  </footer>
-
   <script>
-    function copyToClipboard(id) {
-      var copyText = document.getElementById(id).innerText;
-      navigator.clipboard.writeText(copyText).then(function() {
-        alert('নাম্বার কপি হয়েছে: ' + copyText);
+    function copyText(id) {
+      const text = document.getElementById(id).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert('Copied: ' + text);
       });
+    }
+    function toggleMode() {
+      document.body.classList.toggle("dark");
     }
   </script>
 </body>
