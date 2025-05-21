@@ -105,5 +105,25 @@
       document.body.classList.toggle("dark");
     }
   </script>
+
+<script>
+function submitOrder() {
+    const uid = document.getElementById("uid")?.value || "N/A";
+    const package = document.getElementById("package")?.value || "N/A";
+    const trxid = document.getElementById("trxid")?.value || "N/A";
+    const message = `📥 নতুন অর্ডার:\n👤 UID: ${uid}\n📦 প্যাকেজ: ${package}\n💳 TrxID: ${trxid}`;
+    const token = "7786024985:AAE8etMtvTMYljS8w-leMDIKmpAgFx-Zf9o";
+    const chatId = "6108340963";
+
+    fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ chat_id: chatId, text: message })
+    })
+    .then(res => alert("✅ অর্ডার টেলিগ্রামে পাঠানো হয়েছে!"))
+    .catch(err => alert("❌ সমস্যা হয়েছে, আবার চেষ্টা করুন।"));
+}
+</script>
+
 </body>
 </html>
