@@ -1,62 +1,179 @@
-
 <!DOCTYPE html>
 <html lang="bn">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BD TOPUP.COM</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #f9f9f9; margin: 0; padding: 20px; }
-    .container { background: #fff; max-width: 500px; margin: auto; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    h2 { text-align: center; color: #444; }
-    input, select, button {
-      width: 100%; padding: 10px; margin: 10px 0;
-      border-radius: 5px; border: 1px solid #ccc;
+    :root {
+      --main: #ff6a00;
+      --sec: #b300b3;
+      --bg-light: #fff;
+      --bg-dark: #121212;
+      --text-light: #222;
+      --text-dark: #f5f5f5;
+    }
+    body {
+      font-family: 'Noto Sans Bengali', sans-serif;
+      margin: 0;
+      background: var(--bg-light);
+      color: var(--text-light);
+      transition: 0.4s;
+    }
+    body.dark {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+    }
+    header {
+      background: linear-gradient(to right, var(--main), var(--sec));
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+    .container {
+      max-width: 750px;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    body.dark .container {
+      background: #2a2a2a;
+    }
+    select, input, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
       font-size: 16px;
     }
     button {
-      background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
-      color: white; border: none; font-weight: bold; cursor: pointer;
+      background: var(--main);
+      color: white;
+      font-weight: bold;
+      border: none;
+    }
+    .toggle {
+      position: fixed;
+      top: 10px;
+      right: 15px;
+      background: #ccc;
+      padding: 6px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+    .copy-btn {
+      margin-left: 10px;
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 5px;
+    }
+    footer {
+      text-align: center;
+      font-size: 14px;
+      padding: 20px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h2>BD TOPUP Order Form</h2>
-    <input type="text" id="uid" placeholder="আপনার UID দিন">
-    <select id="package">
-      <option value="৫০ ডায়মন্ড – ৪৫ টাকা">৫০ ডায়মন্ড – ৪৫ টাকা</option>
-      <option value="১০৮০ ডায়মন্ড – ৪২০ টাকা">১০৮০ ডায়মন্ড – ৪২০ টাকা</option>
-      <option value="মাসিক প্যাক – ৫৫০ টাকা">মাসিক প্যাক – ৫৫০ টাকা</option>
-    </select>
-    <select id="amount">
-      <option value="45">৪৫ টাকা</option>
-      <option value="420">৪২০ টাকা</option>
-      <option value="550">৫৫০ টাকা</option>
-    </select>
-    <input type="text" id="trxid" placeholder="TrxID দিন">
-    <button onclick="sendOrder()">অর্ডার করুন</button>
-  </div>
+<div class="toggle" onclick="toggleTheme()">Dark/Light</div>
 
-  <script>
-    function sendOrder() {
-      const uid = document.getElementById('uid').value.trim();
-      const package = document.getElementById('package').value;
-      const amount = document.getElementById('amount').value;
-      const trxid = document.getElementById('trxid').value.trim();
-      const message = `✅ নতুন অর্ডার\n🆔 UID: ${uid}\n📦 প্যাকেজ: ${package}\n💸 পরিমাণ: ${amount} টাকা\n💳 TrxID: ${trxid}`;
+<header>
+  <h1>BD TOPUP.COM</h1>
+  <p>টপআপ এর যেকোনো সমস্যার সমাধান নিন <a style="color: yellow;" href="https://t.me/BDTOPUPCOM24" target="_blank">@BDTOPUPCOM24</a></p>
+</header>
 
-      const token = "7786024985:AAE8etMtvTMYljS8w-leMDIKmpAgFx-Zf9o";
-      const chatId = "6108340963";
+<div class="container">
+  <label for="package">প্যাকেজ নির্বাচন করুন</label>
+  <select id="package">
+    <optgroup label="বাংলাদেশ সার্ভার">
+      <option>25 ডায়মন্ড - ২০ টাকা</option>
+      <option>50 ডায়মন্ড - ৩০ টাকা</option>
+      <option>115 ডায়মন্ড - ৭৫ টাকা</option>
+      <option>240 ডায়মন্ড - ১৪০ টাকা</option>
+      <option>610 ডায়মন্ড - ৩৬০ টাকা</option>
+      <option>1240 ডায়মন্ড - ৬৯৯ টাকা</option>
+      <option>2530 ডায়মন্ড - ১৪৫০ টাকা</option>
+      <option>5060 ডায়মন্ড - ২৯০০ টাকা</option>
+      <option>10120 ডায়মন্ড - ৬০০০ টাকা</option>
+    </optgroup>
+    <optgroup label="উইকলি/মাসিক">
+      <option>উইকলি লাইট - ৩০ টাকা</option>
+      <option>উইকলি - ১৩০ টাকা</option>
+      <option>মাসিক - ৫৮০ টাকা</option>
+      <option>Level Up Pass - ১৩০ টাকা</option>
+    </optgroup>
+    <optgroup label="এয়ারড্রপ">
+      <option>0.99$ - ৮০ টাকা</option>
+      <option>1.99$ - ১৮০ টাকা</option>
+      <option>2.99$ - ২৮০ টাকা</option>
+      <option>3.99$ - ৩৮০ টাকা</option>
+    </optgroup>
+    <optgroup label="ইভু এক্সসেস">
+      <option>৩ দিন - ৬৯ টাকা</option>
+      <option>৭ দিন - ১১০ টাকা</option>
+      <option>৩০ দিন - ২৮৭ টাকা</option>
+    </optgroup>
+    <optgroup label="ইন্দোনেশিয়া">
+      <option>৫ডায়মন্ড - ১৫ টাকা</option>
+      <option>৫০ডায়মন্ড - ৬০ টাকা</option>
+      <option>৭০ডায়মন্ড - ৮০ টাকা</option>
+      <option>১৪০ডায়মন্ড - ১৭০ টাকা</option>
+      <option>৩৫৫ডায়মন্ড - ৪৪০ টাকা</option>
+      <option>৭২০ডায়মন্ড - ৮৩০ টাকা</option>
+      <option>১৪৪০ডায়মন্ড - ১৮৯০ টাকা</option>
+      <option>Level Up Pass - ১৭০ টাকা</option>
+      <option>Weekly 🇮🇩 - ২৫৯ টাকা</option>
+      <option>Monthly 🇮🇩 - ৮৯৯ টাকা</option>
+      <option>BP Card 🇮🇩 - ৩৯৯ টাকা</option>
+    </optgroup>
+  </select>
 
-      fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ chat_id: chatId, text: message })
-      })
-      .then(response => alert("✅ অর্ডার সফলভাবে পাঠানো হয়েছে!"))
-      .catch(error => alert("❌ অর্ডার পাঠাতে সমস্যা হয়েছে।"));
-    }
-  </script>
+  <input type="text" id="uid" placeholder="আপনার UID দিন">
+  <input type="text" id="amount" placeholder="টাকা কত পাঠিয়েছেন?">
+  <input type="text" id="trxid" placeholder="TrxID লিখুন">
+
+  <button onclick="sendOrder()">✅ অর্ডার কনফার্ম করুন</button>
+
+  <p style="margin-top:20px;"><strong>বিকাশ:</strong> 01822769871 <button class="copy-btn" onclick="copyText('01822769871')">Copy</button></p>
+  <p><strong>নগদ:</strong> 01822769871 <button class="copy-btn" onclick="copyText('01822769871')">Copy</button></p>
+</div>
+
+<footer>
+  ⚠️ player ID ভুল দিয়ে অর্ডার করে Diamond না পেলে BD TOPUP দায়ী থাকবে না।<br>
+  🤖 অর্ডার Ai দ্বারা কমপ্লিট হয় ৩০ সেকেন্ডে।<br>
+  🎯 আগের Level Up থাকলে নতুনটা 243💎 দিয়ে রিপ্লেস হবে।<br><br>
+  সহায়তার জন্য: <a href="https://t.me/BDTOPUPCOM24" target="_blank">t.me/BDTOPUPCOM24</a>
+</footer>
+
+<script>
+function toggleTheme() {
+  document.body.classList.toggle("dark");
+}
+function copyText(text) {
+  navigator.clipboard.writeText(text);
+  alert("✅ কপি হয়েছে: " + text);
+}
+function sendOrder() {
+  const pack = document.getElementById("package").value;
+  const uid = document.getElementById("uid").value;
+  const amount = document.getElementById("amount").value;
+  const trxid = document.getElementById("trxid").value;
+
+  const msg = `✅ New Order Received\n📦 প্যাকেজ: ${pack}\n🆔 UID: ${uid}\n💸 পাঠানো: ${amount} টাকা\n🧾 TrxID: ${trxid}`;
+  const token = "7786024985:AAGUpzTtSx_i7c90XNgP45fOl2zlr5O1FKE";
+  const chat = "6108340963";
+
+  fetch("https://api.telegram.org/bot" + token + "/sendMessage", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({ chat_id: chat, text: msg })
+  }).then(() => alert("✅ অর্ডার সফলভাবে পাঠানো হয়েছে!"));
+}
+</script>
 </body>
 </html>
